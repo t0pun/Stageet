@@ -19,7 +19,7 @@
             tools:layout_editor_absoluteY="193dp">
 
             <ImageView
-                android:id="@+id/imageViewNom"
+                android:id="@+id/imageViewLocalisationEntreprise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -28,16 +28,16 @@
                 tools:layout_editor_absoluteY="88dp" />
 
             <TextView
-                android:id="@+id/textViewNom"
+                android:id="@+id/textViewLocalisationEntreprise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Quel est votre nom ?"
+                android:text="Quelle est la localisation de l'entreprise ?"
                 android:textSize="18dp"
                 android:fontFamily="@font/comfortaa_semibold"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutNom"
+                android:id="@+id/layoutLocationEntreprise"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="333dp"
                 android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nom"
+                    android:id="@+id/localisationEntreprise"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bord_arrondi"
@@ -67,7 +67,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="21dp"
-        android:background="@drawable/barre_progression1"
+        android:background="@drawable/barre_progression2"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="1dp">
 

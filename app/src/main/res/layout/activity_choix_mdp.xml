@@ -5,50 +5,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="190dp"
             android:orientation="vertical"
-            android:layout_marginTop="240dp"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="193dp">
 
+
             <ImageView
-                android:id="@+id/imageViewNom"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageViewChoixMdp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:srcCompat="@mipmap/logo_background"
-                tools:layout_editor_absoluteX="151dp"
-                tools:layout_editor_absoluteY="88dp" />
+                app:srcCompat="@mipmap/logo_background" />
 
             <TextView
-                android:id="@+id/textViewNom"
+                android:id="@+id/textViewChoixMdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Quel est votre nom ?"
+                android:text="Votre mot de passe"
                 android:textSize="18dp"
                 android:fontFamily="@font/comfortaa_semibold"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutNom"
+                android:id="@+id/layoutMdp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="333dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                app:boxCornerRadiusTopStart="20dp"
-                android:maxLines="1">
+                app:boxCornerRadiusTopStart="20dp">
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nom"
+                    android:id="@+id/mdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_arrondi"
+                    android:maxLines="1"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textViewChoixReMdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Confirmation du mot de passe"
+                android:textSize="18dp"
+                android:fontFamily="@font/comfortaa_semibold"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutReMdp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="333dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                app:boxCornerRadiusTopStart="20dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reMdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bord_arrondi"
@@ -58,16 +87,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
         </LinearLayout>
-
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="21dp"
-        android:background="@drawable/barre_progression1"
+        android:background="@drawable/barre_progression8"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="1dp">
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Carré avec bordure -->
+    <item>
+        <shape>
+            <solid android:color="@color/white" /> <!-- Couleur de fond transparente -->
+            <stroke
+                android:width="3dp"
+                android:color="#6F6F6F" /> <!-- Couleur et largeur de la bordure -->
+            <corners android:radius="20dp" /> <!-- Rayon de courbure pour les coins -->
+        </shape>
+    </item>
+
+    <!-- Barre rouge à l'intérieur du carré -->
+    <item
+        android:left="10dp"
+        android:right="225dp"
+        android:top="5dp"
+        android:bottom="5dp">
+        <shape>
+            <solid android:color="#FF0000" /> <!-- Couleur rouge -->
+            <corners android:radius="20dp" /> <!-- Rayon de courbure pour les coins -->
+
+        </shape>
+    </item>
+
+</layer-list>

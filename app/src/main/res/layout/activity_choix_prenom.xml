@@ -18,37 +18,35 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="193dp">
 
+
             <ImageView
-                android:id="@+id/imageViewNom"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageViewPrenom"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:srcCompat="@mipmap/logo_background"
-                tools:layout_editor_absoluteX="151dp"
-                tools:layout_editor_absoluteY="88dp" />
+                app:srcCompat="@mipmap/logo_background" />
 
             <TextView
-                android:id="@+id/textViewNom"
+                android:id="@+id/textViewPrenom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Quel est votre nom ?"
+                android:text="Quel est votre prénom ?"
                 android:textSize="18dp"
                 android:fontFamily="@font/comfortaa_semibold"/>
 
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutNom"
+                android:id="@+id/layoutPrenom"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="333dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                app:boxCornerRadiusTopStart="20dp"
-                android:maxLines="1">
+                app:boxCornerRadiusTopStart="20dp">
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nom"
+                    android:id="@+id/prenom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bord_arrondi"
@@ -56,7 +54,6 @@
 
 
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
         </LinearLayout>
@@ -67,11 +64,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="21dp"
-        android:background="@drawable/barre_progression1"
+        android:background="@drawable/barre_progression2"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="1dp">
 
     </TextView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
