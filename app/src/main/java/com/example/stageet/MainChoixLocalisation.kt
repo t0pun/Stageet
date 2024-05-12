@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -32,20 +33,24 @@ class MainChoixLocalisation : AppCompatActivity() {
             }
         }
 
-        val dialogBuilder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.dialog_custom, null)
+            val builder = AlertDialog.Builder(this)
+            builder.setView(dialogView)
 
-        dialogBuilder.setMessage("Acceptez-vous de partager votre localisation afin de vous proposer des offres qui vous correspondent au mieux ?")
-            .setPositiveButton("Accepter", DialogInterface.OnClickListener { dialog, which ->
-                // mettre qlq chose ici
-                dialog.dismiss()
-            })
-            .setNegativeButton("Refuser", DialogInterface.OnClickListener { dialog, which ->
-                // mettre qlq chose ici
-                dialog.dismiss()
-            })
+            val textAccepter = dialogView.findViewById<TextView>(R.id.textViewAccepter)
+            val textRefuser = dialogView.findViewById<TextView>(R.id.textViewRefuser)
 
-        val dialog = dialogBuilder.create()
-        dialog.show()
+            val dialog = builder.create()
+            textAccepter.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            textRefuser.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.show()
+
     }
 
 

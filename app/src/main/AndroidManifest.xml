@@ -67,6 +67,9 @@
         <activity
             android:name=".MainEmployeurAjoutLien">
         </activity>
+        <activity
+            android:name=".MainPageOffre">
+        </activity>
 
 
     </application>
