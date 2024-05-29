@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/constraintLayout">
 
 
     <androidx.cardview.widget.CardView
@@ -35,23 +36,24 @@
                 tools:layout_editor_absoluteX="126dp" />
 
             <ImageView
-                android:id="@+id/imageViewBoutonRecheche"
-                android:layout_width="54dp"
-                android:layout_height="51dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="355dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="2dp"
-                app:srcCompat="@mipmap/recherche_bouton_foreground" />
+                android:id="@+id/imageViewBoutonBurger"
+                android:layout_width="58dp"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="45dp"
+                app:srcCompat="@mipmap/bouton_burger_foreground" />
 
             <ImageView
-                android:id="@+id/imageViewBoutonBurger"
-                android:layout_width="55dp"
-                android:layout_height="47dp"
+                android:id="@+id/imageViewBoutonRecheche"
+                android:layout_width="79dp"
+                android:layout_height="71dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="50dp"
-                app:srcCompat="@mipmap/bouton_burger_foreground" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="326dp"
+                android:layout_marginTop="39dp"
+                android:layout_marginEnd="7dp"
+                app:srcCompat="@mipmap/loupe_foreground" />
 
         </RelativeLayout>
 
@@ -70,6 +72,7 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp" />
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="388dp"
@@ -77,15 +80,15 @@
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
         android:layout_gravity="fill"
-        app:cardBackgroundColor="@color/red"
         android:layout_marginBottom="-25dp"
+        app:cardBackgroundColor="@color/red"
         app:cardCornerRadius="25dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.118"
+        app:layout_constraintVertical_bias="0.059"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="4dp">
+        tools:layout_editor_absoluteX="16dp">
 
         <TextView
             android:id="@+id/textViewPoste"
@@ -108,7 +111,6 @@
 
     </androidx.cardview.widget.CardView>
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="390dp"
@@ -121,9 +123,9 @@
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.088"
+        app:layout_constraintVertical_bias="0.085"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="4dp">
+        tools:layout_editor_absoluteX="16dp">
 
 
         <TextView
@@ -171,6 +173,188 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBurger"
+        android:layout_width="424dp"
+        android:layout_height="116dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-5dp"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/textViewSeConnecter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Se connecter" />
+
+        <TextView
+            android:id="@+id/textViewSincrire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="S'incrire" />
+
+
+        <TextView
+            android:id="@+id/textViewParametres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Paramètres" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRecherche"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp"
+        android:visibility="visible">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutLieu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="329dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:maxLines="1"
+            android:orientation="horizontal"
+            app:boxCornerRadiusTopStart="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lieu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_arrondi"
+                    android:maxLines="1"
+                    android:paddingStart="50dp"/>
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="35dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.975"
+                    app:layout_constraintStart_toStartOf="@+id/lieu"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.466"
+                    app:srcCompat="@mipmap/bouton_annuler_foreground" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="38dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/lieu"
+                    app:layout_constraintStart_toStartOf="@+id/lieu"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/loupe_foreground" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutPosition"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="329dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="20dp"
+            android:maxLines="1"
+            android:orientation="horizontal"
+            app:boxCornerRadiusTopStart="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_arrondi"
+                    android:maxLines="1" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="35dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/position"
+                    app:layout_constraintHorizontal_bias="0.975"
+                    app:layout_constraintStart_toStartOf="@+id/position"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.466"
+                    app:srcCompat="@mipmap/bouton_annuler_foreground" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="32dp"
+                    android:layout_height="29dp"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/position"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.555"
+                    app:srcCompat="@mipmap/position_foreground" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/boutonEmployeur"
+        android:layout_width="148dp"
+        android:layout_height="23dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bouton_filtre"
+        android:fontFamily="@font/martelsans_bold"
+        android:text="Date de publication"
+        android:textSize="10dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="510dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

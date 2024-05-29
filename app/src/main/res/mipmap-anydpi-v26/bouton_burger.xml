@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/bouton_burger_background"/>
-    <foreground android:drawable="@mipmap/bouton_burger_foreground"/>
+    <foreground android:drawable="@mipmap/bouton_annuler_foreground"/>
 </adaptive-icon>
