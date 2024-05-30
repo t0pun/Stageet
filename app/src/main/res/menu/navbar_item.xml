@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/navNotification" android:title="Notification" android:icon="@mipmap/home"></item>
+    <item android:id="@+id/navHome" android:title="Home" android:icon="@mipmap/serach_navbar"></item>
+    <item android:id="@+id/navProfile" android:title="Profile" android:icon="@mipmap/user_profil"></item>
+</menu>

@@ -5,6 +5,10 @@
     <color name="blue">#2B2E4A</color>
     <color name="red">#D31818</color>
     <color name="green">#27D106</color>
+    <color name="gris">#949393</color>
+    <color name="navBarUnpressed">#ff9d96</color>
+
+
 
 
 </resources>

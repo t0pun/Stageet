@@ -1,6 +1,7 @@
 package com.example.stageet
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
 import android.text.Spannable
@@ -19,6 +20,7 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import com.google.android.material.navigation.NavigationView
 
 class MainPageOffre :AppCompatActivity() {
 
@@ -94,6 +96,20 @@ class MainPageOffre :AppCompatActivity() {
         boutonAnnulerLieu.setOnClickListener{
             lieu.text = null
         }
+
+        /*
+        val navView: NavigationView = findViewById(R.id.navVieuw)
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navProfile -> {
+                    startActivity(Intent(this, Profil_user::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
+         */
 
 
     }

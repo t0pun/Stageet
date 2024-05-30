@@ -75,122 +75,19 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="388dp"
-        android:layout_height="70dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_marginBottom="-25dp"
-        app:cardBackgroundColor="@color/red"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.087"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp">
-
-        <TextView
-            android:id="@+id/textViewPoste"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Ingénieur(e) Logiciel (H/F)" />
-
-        <TextView
-            android:id="@+id/textViewDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Mai - Juin" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="390dp"
-        android:layout_height="87dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.164"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp">
-
-
-        <TextView
-            android:id="@+id/textViewConnecter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Durée : 2 mois" />
-
-
-        <TextView
-            android:id="@+id/textViewRemuneration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Rémuneration : Oui " />
-
-
-        <TextView
-            android:id="@+id/textViewEntreprise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="15dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Entreprise : Capgemini" />
-
-        <TextView
-            android:id="@+id/textViewLieu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Lieu : Montpellier" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/cardViewBurger"
         android:layout_width="424dp"
         android:layout_height="116dp"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
         android:layout_gravity="fill"
+        android:visibility="gone"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="25dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-5dp"
-        android:visibility="gone">
+        tools:layout_editor_absoluteX="-5dp">
 
 
         <TextView
@@ -225,6 +122,171 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/missionCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/red"
+                    android:gravity="left"
+                    android:orientation="vertical"
+                    android:padding="17dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:weightSum="6">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:gravity="left|center">
+
+                            <TextView
+                                android:id="@+id/jobTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/comfortaa_bold"
+                                android:maxLength="35"
+                                android:text="Ingénieur(e) logiciel (H/F)"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/white"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right|center">
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/comfortaa_bold"
+                                android:maxLength="35"
+                                android:text="Mai - juin"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/white"
+                                android:textSize="15dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/jobCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:text="Durée : "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/jobLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:drawablePadding="10dp"
+                    android:text="Rémunération : "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/jobSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:drawablePadding="10dp"
+                    android:text="Entreprise : "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:id="@+id/lieu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:drawablePadding="10dp"
+                    android:text="Lieu : "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewRecherche"
         android:layout_width="409dp"
@@ -257,7 +319,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bord_arrondi"
-                    android:hint="Lieu"
                     android:maxLines="1" />
 
                 <ImageView
@@ -323,23 +384,6 @@
 
 
     </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewNavbar"
-        android:layout_width="match_parent"
-        android:layout_height="77dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_marginBottom="-25dp"
-        app:cardBackgroundColor="@color/red"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
