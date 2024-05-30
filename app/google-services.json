@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656257739351",
+    "project_id": "stageet-70fe0",
+    "storage_bucket": "stageet-70fe0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656257739351:android:ebbf19961bfe4d85875112",
+        "android_client_info": {
+          "package_name": "com.example.stageet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdEJKNhLDLWAn6zEiTWltHSrLrJ1cpFKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

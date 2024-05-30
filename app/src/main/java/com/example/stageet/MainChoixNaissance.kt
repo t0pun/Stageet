@@ -21,6 +21,8 @@ class MainChoixNaissance : AppCompatActivity() {
         setContentView(R.layout.activity_choix_naissance)
 
         val naissance : EditText = findViewById(R.id.naissance)
+        val nom = intent.getStringExtra("EXTRA_NOM")
+        val prenom = intent.getStringExtra("EXTRA_PRENOM")
         val boutonPasser : AppCompatButton = findViewById(R.id.buttonPasserNaissance)
 
         naissance.addTextChangedListener(object : TextWatcher {
@@ -82,8 +84,12 @@ class MainChoixNaissance : AppCompatActivity() {
 
         naissance.setOnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
-                val intent = Intent(this, MainChoixDomaineEtude::class.java)
-                val naissance_text = naissance.text
+                val naissanceText = naissance.text.toString()
+                val intent = Intent(this, MainChoixDomaineEtude::class.java).apply {
+                    putExtra("EXTRA_NOM", nom)
+                    putExtra("EXTRA_PRENOM", prenom)
+                    putExtra("EXTRA_NAISSANCE",naissanceText)
+                }
                 startActivity(intent)
                 true
             } else {
