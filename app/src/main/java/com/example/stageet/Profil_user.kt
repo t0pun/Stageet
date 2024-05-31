@@ -14,27 +14,6 @@ class Profil_user : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_profil)
-
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.navVieuw)
-        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-
-                 R.id.navHome -> {
-                     startActivity(Intent(this, PageNewOffre::class.java))
-                     true
-                 }
-
-                R.id.navNotification -> {
-                    startActivity(Intent(this, MainPageOffre::class.java))
-                    true
-                }
-
-
-                else -> false
-            }
-
-
-            }
         }
 
     }
