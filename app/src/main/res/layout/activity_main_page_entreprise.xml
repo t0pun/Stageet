@@ -43,34 +43,65 @@
                 android:layout_marginTop="45dp"
                 app:srcCompat="@mipmap/bouton_burger_foreground" />
 
-            <ImageView
-                android:id="@+id/imageViewBoutonRecheche"
-                android:layout_width="61dp"
-                android:layout_height="58dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="349dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="0dp"
-                app:srcCompat="@mipmap/loupe_foreground" />
-
         </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa_bold"
-        android:text="Nouvelle offres sur : Localisation"
+        android:text="Nos offres :"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.031"
+        app:layout_constraintVertical_bias="0.194"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEntreprise"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-7dp">
+
+
+        <TextView
+            android:id="@+id/nomEntreprise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="nom entreprise"
+            android:textSize="30dp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
     <androidx.cardview.widget.CardView
@@ -126,7 +157,7 @@
         android:id="@+id/missionCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="100dp"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
@@ -286,214 +317,19 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewRecherche"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Conteneur pour les champs de recherche -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
-
-                <!-- Premier TextInputLayout -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/layoutLieu"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="329dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:maxLines="1"
-                    android:orientation="horizontal"
-                    app:boxCornerRadiusTopStart="20dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/lieu"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bord_arrondi"
-                            android:maxLines="1"
-                            android:paddingStart="50dp"
-                            tools:ignore="MissingConstraints" />
-
-                        <ImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="35dp"
-                            android:layout_height="28dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.975"
-                            app:layout_constraintStart_toStartOf="@+id/lieu"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.466"
-                            app:srcCompat="@mipmap/bouton_annuler_foreground" />
-
-                        <ImageView
-                            android:id="@+id/imageView5"
-                            android:layout_width="38dp"
-                            android:layout_height="28dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/lieu"
-                            app:layout_constraintStart_toStartOf="@+id/lieu"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@mipmap/loupe_foreground" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!-- Deuxième TextInputLayout -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/layoutPosition"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="329dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="20dp"
-                    android:maxLines="1"
-                    android:orientation="horizontal"
-                    app:boxCornerRadiusTopStart="20dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/position"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bord_arrondi"
-                            android:maxLines="1"
-                            android:paddingStart="50dp"
-                            tools:ignore="MissingConstraints" />
-
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="35dp"
-                            android:layout_height="28dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@+id/position"
-                            app:layout_constraintHorizontal_bias="0.975"
-                            app:layout_constraintStart_toStartOf="@+id/position"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.466"
-                            app:srcCompat="@mipmap/bouton_annuler_foreground" />
-
-                        <ImageView
-                            android:id="@+id/imageView6"
-                            android:layout_width="32dp"
-                            android:layout_height="29dp"
-                            android:layout_marginStart="4dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="@+id/position"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.555"
-                            app:srcCompat="@mipmap/position_foreground" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <!-- HorizontalScrollView pour les boutons -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/boutonDatePublication"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
-                        android:fontFamily="@font/comfortaa_bold"
-                        android:text="Date de publication"
-                        android:textAllCaps="false"
-                        android:textSize="10sp"
-                        android:layout_margin="8dp" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/boutonDuree"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
-                        android:fontFamily="@font/comfortaa_bold"
-                        android:text="Durée"
-                        android:textAllCaps="false"
-                        android:textSize="10sp"
-                        android:layout_margin="8dp" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/boutonRemuneration"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
-                        android:fontFamily="@font/comfortaa_bold"
-                        android:text="Rémunération"
-                        android:textAllCaps="false"
-                        android:textSize="10sp"
-                        android:layout_margin="8dp" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/boutonPeriode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
-                        android:fontFamily="@font/comfortaa_bold"
-                        android:text="Période"
-                        android:textAllCaps="false"
-                        android:textSize="10sp"
-                        android:layout_margin="8dp" />
-                    <!-- Boutons dynamiques pour les filtres -->
-                    <!-- Définissez vos boutons ici comme illustré précédemment -->
-                </LinearLayout>
-            </HorizontalScrollView>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bodyApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navVieuw"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
             android:background="@drawable/nav_bar"
             app:itemIconSize="30dp"
             app:itemIconTint="@drawable/item_selector"
@@ -507,6 +343,22 @@
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAjoutOffre"
+        android:layout_width="129dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bouton_plus"
+        android:text="+"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

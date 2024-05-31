@@ -102,16 +102,11 @@ class MainPageOffre :AppCompatActivity() {
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.navVieuw)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-               /*
+
                 R.id.navNotification -> {
-                    startActivity(Intent(this, NotificationActivity::class.java))
+                    startActivity(Intent(this, PageNewOffre::class.java))
                     true
                 }
-                R.id.navHome -> {
-                    startActivity(Intent(this, HomeActivity::class.java))
-                    true
-                }
-                */
                 R.id.navProfile -> {
                     startActivity(Intent(this, Profil_user::class.java))
                     true

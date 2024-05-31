@@ -73,6 +73,21 @@
         <activity
             android:name=".Profil_user">
         </activity>
+        <activity
+            android:name=".PageNewOffre">
+        </activity>
+        <activity
+            android:name=".MainPageEntreprise">
+        </activity>
+        <activity
+            android:name=".CreationOffre">
+        </activity>
+        <activity
+            android:name=".ProfilEntreprise">
+        </activity>
+        <activity
+            android:name=".CandidatEntreprise">
+        </activity>
 
 
 
