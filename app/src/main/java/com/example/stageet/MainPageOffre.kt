@@ -20,6 +20,7 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainPageOffre :AppCompatActivity() {
@@ -97,10 +98,15 @@ class MainPageOffre :AppCompatActivity() {
             lieu.text = null
         }
 
-        /*
-        val navView: NavigationView = findViewById(R.id.navVieuw)
-        navView.setNavigationItemSelectedListener { menuItem ->
+
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.navVieuw)
+        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+
+                R.id.navNotification -> {
+                    startActivity(Intent(this, PageNewOffre::class.java))
+                    true
+                }
                 R.id.navProfile -> {
                     startActivity(Intent(this, Profil_user::class.java))
                     true
@@ -108,11 +114,12 @@ class MainPageOffre :AppCompatActivity() {
                 else -> false
             }
         }
-
-         */
-
-
     }
+
+
+
+
+
 
 
 }

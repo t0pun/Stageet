@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    android:id="@+id/formScrollContainer"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".authentication.Registration">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:weightSum="6"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottomDeckDiscussions"
+            app:layout_constraintTop_toTopOf="@+id/layoutMain">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left">
+
+                <Button
+                    android:id="@+id/cancelDelete"
+                    android:layout_width="30dp"
+                    android:visibility="gone"
+                    android:layout_height="30dp"
+                    android:background="@drawable/baseline_cancel_24"
+                    android:backgroundTint="#FFFFFF"
+                    android:drawableTint="#FBFAFA"
+                    android:foregroundTint="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="4">
+
+                <TextView
+                    android:id="@+id/convName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Poster une annonce"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    app:layout_constraintTop_toTopOf="@id/layoutMain"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bottomDeckDiscussions"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="70dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/haut_bord_arrondi" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomDeckDiscussions">
+
+            <LinearLayout
+                android:id="@+id/formContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bouton_photo">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="20dp"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:text="Informations" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutOfferName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/black"
+                        app:placeholderTextColor="@color/black"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="@color/red"
+                        app:boxStrokeErrorColor="#DC0303"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="@color/red"
+                        app:expandedHintEnabled="false"
+                        app:helperTextEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parent"
+                        app:startIconTint="@color/red"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/poste"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bord_arrondi_layout"
+                            android:hint="Poste"
+                            android:inputType="textCapSentences"
+                            android:maxLength="35"
+                            android:maxLines="1"
+                            android:minLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutOfferCompanyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="@color/red"
+                        app:boxStrokeErrorColor="#DC0303"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="@color/red"
+                        app:expandedHintEnabled="false"
+                        app:helperTextEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parent"
+                        app:startIconTint="@color/red"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nomEntreprise"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bord_arrondi_layout"
+                            android:hint="Nom entreprise"
+                            android:inputType="textCapSentences"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:minLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutOfferSalary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="@color/red"
+                        app:boxStrokeErrorColor="#DC0303"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="@color/red"
+                        app:expandedHintEnabled="false"
+                        app:helperTextEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parent"
+                        app:startIconTint="@color/red"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lieu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bord_arrondi_layout"
+                            android:hint="Lieu"
+                            android:inputType="numberSigned"
+                            android:maxLength="5"
+                            android:maxLines="1"
+                            android:minLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutOfferCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="@color/red"
+                        app:boxStrokeErrorColor="#DC0303"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="@color/red"
+                        app:expandedHintEnabled="false"
+                        app:helperTextEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parent"
+                        app:startIconTint="@color/red"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/duree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bord_arrondi_layout"
+                            android:hint="Durée"
+                            android:inputType="textCapSentences"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:minLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutCompanyWebsite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="@color/red"
+                        app:boxStrokeErrorColor="#DC0303"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="@color/red"
+                        app:expandedHintEnabled="false"
+                        app:helperTextEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parent"
+                        app:startIconTint="@color/red"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/moisDebut"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bord_arrondi_layout"
+                            android:hint="Mois de début"
+                            android:inputType="text"
+                            android:maxLength="50"
+                            android:maxLines="1"
+                            android:minLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline"
+                        app:boxStrokeColor="@color/red"
+                        app:boxStrokeErrorColor="#DC0303"
+                        app:endIconMode="clear_text"
+                        app:endIconTint="@color/red"
+                        app:expandedHintEnabled="false"
+                        app:helperTextEnabled="false"
+                        android:layout_marginBottom="20dp"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/parent"
+                        app:startIconTint="@color/red"
+                        tools:ignore="MissingConstraints">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/moisFin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bord_arrondi_layout"
+                            android:hint="Mois de fin"
+                            android:inputType="textCapSentences"
+                            android:maxLength="50"
+                            android:maxLines="1"
+                            android:minLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bord_arrondi_layout"
+                    android:layout_marginRight="10dp"
+                    android:padding="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="250"
+                        android:maxHeight="300dp"
+                        android:inputType="textCapSentences"
+                        android:hint="Description">
+
+                    </EditText>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/login"
+                        android:layout_width="191dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@color/red"
+                        android:text="Enregistrer"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="15dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

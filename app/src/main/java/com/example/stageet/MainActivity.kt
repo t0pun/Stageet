@@ -67,6 +67,10 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
 
+        login.setOnClickListener{
+            startActivity(Intent(this, MainPageEntreprise::class.java))
+        }
+
         changePassword.setOnClickListener {
             startActivity(Intent(this, MainPageOffre::class.java))
         }

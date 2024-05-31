@@ -7,34 +7,32 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class Profil_user : AppCompatActivity() {
+class ProfilEntreprise : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId", "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_profil)
+        setContentView(R.layout.activity_profil_entreprise)
+
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.navVieuw)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
 
-                 R.id.navHome -> {
-                     startActivity(Intent(this, PageNewOffre::class.java))
-                     true
-                 }
-
                 R.id.navNotification -> {
-                    startActivity(Intent(this, MainPageOffre::class.java))
+                    startActivity(Intent(this, MainPageEntreprise::class.java))
+                    true
+                }
+                R.id.navHome -> {
+                    startActivity(Intent(this, CreationOffre::class.java))
                     true
                 }
 
-
                 else -> false
-            }
-
-
             }
         }
 
+
     }
+}

@@ -43,7 +43,7 @@
                     android:layout_marginEnd="40dp"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Utilisateur"
+                    android:text="Nom Entreprise"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -65,18 +65,39 @@
 
                     <TextView
                         android:id="@+id/birthDate"
-                        android:layout_width="124dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="41dp"
                         android:layout_marginStart="40dp"
                         android:layout_marginEnd="40dp"
-                        android:drawableStart="@mipmap/birthday_cake"
                         android:drawablePadding="10dp"
                         android:padding="10dp"
-                        android:text="Anniversaire"
+                        android:drawableStart="@drawable/baseline_location_on_24"
+                        android:text="Lieu de l'entreprise"
                         android:textSize="18sp"
                         android:textStyle="bold">
                     </TextView>
 
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:drawableStart="@drawable/baseline_alternate_email_24"
+                        android:drawablePadding="10dp"
+                        android:padding="10dp"
+                        android:text="email"
+                        android:textSize="18sp"
+                        android:textStyle="bold">
+                    </TextView>
                 </LinearLayout>
 
 
@@ -97,7 +118,8 @@
                         android:padding="10dp"
                         android:text="06 15 47 89 65"
                         android:textSize="18sp"
-                        android:textStyle="bold"></TextView>
+                        android:textStyle="bold">
+                    </TextView>
                 </LinearLayout>
 
 
@@ -113,12 +135,13 @@
                         android:layout_marginStart="40dp"
                         android:layout_marginEnd="40dp"
                         android:autoSizeTextType="uniform"
-                        android:drawableStart="@drawable/baseline_alternate_email_24"
+                        android:drawableStart="@drawable/baseline_add_link_24"
                         android:drawablePadding="10dp"
                         android:padding="10dp"
-                        android:text="john.doe@gmail.com"
+                        android:text="lien réseau"
                         android:textSize="15sp"
-                        android:textStyle="bold"></TextView>
+                        android:textStyle="bold">
+                    </TextView>
                 </LinearLayout>
             </LinearLayout>
 
