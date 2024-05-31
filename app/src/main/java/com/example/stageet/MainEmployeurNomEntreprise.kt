@@ -21,8 +21,10 @@ class MainEmployeurNomEntreprise : AppCompatActivity() {
 
         nomEntreprise.setOnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
-                val intent = Intent(this, MainEmployeurLocalisation::class.java)
-                val nomEntreprise_text = nomEntreprise.text
+                val nomEntrepriseText = nomEntreprise.text.toString()
+                val intent = Intent(this, MainEmployeurLocalisation::class.java).apply {
+                    putExtra("EXTRA_NOM",nomEntrepriseText)
+                }
                 startActivity(intent)
                 true
             } else {

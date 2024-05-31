@@ -4,510 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-
+    <!-- Top Bar -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
+        android:layout_margin="0dp"
+        android:layout_marginTop="0dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/imageViewBoutonBurger"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_menu"
+                android:tint="@color/white"
+                android:contentDescription="Menu Icon"/>
 
             <ImageView
                 android:id="@+id/imageViewLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="151dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="150dp"
+                android:layout_centerInParent="true"
                 app:srcCompat="@mipmap/logo_foreground"
-                tools:layout_editor_absoluteX="126dp" />
-
-            <ImageView
-                android:id="@+id/imageViewBoutonBurger"
-                android:layout_width="58dp"
-                android:layout_height="52dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="45dp"
-                app:srcCompat="@mipmap/bouton_burger_foreground" />
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/imageViewBoutonRecheche"
-                android:layout_width="61dp"
-                android:layout_height="58dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="349dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginEnd="0dp"
-                app:srcCompat="@mipmap/loupe_foreground" />
+                android:src="@drawable/ic_search"
+                android:tint="@color/white"
+                android:contentDescription="Search Icon"/>
 
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
 
+    <!-- Title Text -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="Nouvelle offres sur : Localisation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.031"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal" />
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewBurger"
-        android:layout_width="424dp"
-        android:layout_height="116dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:visibility="gone"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-5dp">
-
-
-        <TextView
-            android:id="@+id/textViewSeConnecter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Se connecter" />
-
-        <TextView
-            android:id="@+id/textViewSincrire"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="45dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="S'incrire" />
-
-
-        <TextView
-            android:id="@+id/textViewParametres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="15dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Paramètres" />
-
-
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/missionCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="250dp"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:ignore="MissingConstraints">
+    <!-- Job Offers List -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/navView">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <!-- Job Offer 1 -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/red"
-                    android:gravity="left"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="17dp">
-
+                    android:padding="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:weightSum="6">
+                        android:orientation="horizontal"
+                        android:background="@android:color/holo_red_dark">
 
-                        <LinearLayout
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:gravity="left|center">
+                            android:layout_weight="1"
+                            android:text="Ingénieur(e) logiciel (H/F)"
+                            android:textColor="@android:color/white"
+                            android:padding="4dp"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/jobTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/comfortaa_bold"
-                                android:maxLength="35"
-                                android:text="Ingénieur(e) logiciel (H/F)"
-                                android:textAlignment="textStart"
-                                android:textColor="@color/white"
-                                android:textSize="15dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right|center">
-
-                            <TextView
-                                android:id="@+id/date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/comfortaa_bold"
-                                android:maxLength="35"
-                                android:text="Mai - juin"
-                                android:textAlignment="textStart"
-                                android:textColor="@color/white"
-                                android:textSize="15dp" />
-
-                        </LinearLayout>
-
-
+                            android:text="Mai - Juin"
+                            android:textColor="@android:color/white"
+                            android:padding="4dp" />
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Durée : 2 mois"
+                        android:layout_marginTop="8dp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rémunération : Oui"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Entreprise : Capgemini"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lieu : Montpellier"
+                        android:layout_marginTop="4dp" />
                 </LinearLayout>
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/jobCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="@font/comfortaa_bold"
-                    android:text="Durée : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/jobLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:text="Rémunération : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/jobSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:text="Entreprise : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/lieu2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginBottom="20dp"
-                    android:drawablePadding="10dp"
-                    android:text="Lieu : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
+            <!-- Repeat Job Offer Block as needed -->
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewRecherche"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginBottom="36dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        >
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutLieu"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="329dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:maxLines="1"
-            android:orientation="horizontal"
-            app:boxCornerRadiusTopStart="20dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/lieu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bord_arrondi"
-                    android:maxLines="1"
-                    android:paddingStart="50dp" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="35dp"
-                    android:layout_height="28dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.975"
-                    app:layout_constraintStart_toStartOf="@+id/lieu"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.466"
-                    app:srcCompat="@mipmap/bouton_annuler_foreground" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="38dp"
-                    android:layout_height="28dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/lieu"
-                    app:layout_constraintStart_toStartOf="@+id/lieu"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/loupe_foreground" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutPosition"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="329dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="20dp"
-            android:maxLines="1"
-            android:orientation="horizontal"
-            app:boxCornerRadiusTopStart="20dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/position"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bord_arrondi"
-                    android:maxLines="1" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="35dp"
-                    android:layout_height="28dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/position"
-                    app:layout_constraintHorizontal_bias="0.975"
-                    app:layout_constraintStart_toStartOf="@+id/position"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.466"
-                    app:srcCompat="@mipmap/bouton_annuler_foreground" />
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="32dp"
-                    android:layout_height="29dp"
-                    android:layout_marginStart="4dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/position"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.555"
-                    app:srcCompat="@mipmap/position_foreground" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="10dp">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/boutonDuree"
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bouton_filtre"
-                android:backgroundTint="@color/gris"
-                android:fontFamily="@font/comfortaa_bold"
-                android:text="Durée"
-                android:textAllCaps="false"
-                android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="4dp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/boutonDatePublication"
-                android:layout_width="148dp"
-                android:layout_height="23dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bouton_filtre"
-                android:backgroundTint="@color/gris"
-                android:fontFamily="@font/comfortaa_bold"
-                android:text="Date de publication"
-                android:textAllCaps="false"
-                android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.019"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="4dp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/boutonRemuneration"
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
-                android:layout_gravity="center"
-                android:background="@drawable/bouton_filtre"
-                android:backgroundTint="@color/gris"
-                android:fontFamily="@font/comfortaa_bold"
-                android:text="Rémunération"
-                android:textAllCaps="false"
-                android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.816"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="4dp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/boutonPeriode"
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="364dp"
-                android:background="@drawable/bouton_filtre"
-                android:backgroundTint="@color/gris"
-                android:fontFamily="@font/comfortaa_bold"
-                android:text="Période"
-                android:textAllCaps="false"
-                android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="2dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bodyApp"
-        android:layout_width="match_parent"
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navVieuw"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/nav_bar"
-            app:itemIconSize="30dp"
-            app:itemIconTint="@drawable/item_selector"
-            app:itemRippleColor="@color/white"
-            app:labelVisibilityMode="unlabeled"
-            app:layout_constraintBottom_toBottomOf="@+id/bodyApp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/navbar_item">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        android:background="@android:color/white"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/navbar_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
