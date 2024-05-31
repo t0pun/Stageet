@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/grisClair" /> <!-- Couleur de fond transparente -->
+    <solid android:color="#2B2E4A" /> <!-- Couleur de fond transparente -->
     <stroke
-        android:width="1dp"
+        android:width="3dp"
         android:color="#000000" /> <!-- Couleur et largeur de la bordure -->
     <corners android:radius="20dp" /> <!-- Rayon de courbure pour les coins -->
 </shape>

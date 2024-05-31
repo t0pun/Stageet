@@ -11,15 +11,19 @@ import android.text.style.ClickableSpan
 import android.text.style.ImageSpan
 import android.transition.TransitionManager
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -49,6 +53,9 @@ class MainPageOffre :AppCompatActivity() {
         val cardViewRecherche : CardView = findViewById(R.id.cardViewRecherche)
         var cardVisibleBurger = false
         //var cardVisibleRecherche = false
+        val boutonDatePublication : AppCompatButton = findViewById(R.id.boutonDatePublication)
+        val boutonDuree : AppCompatButton = findViewById(R.id.boutonDuree)
+        val boutonRemuneration = findViewById<AppCompatButton>(R.id.boutonRemuneration)
 
 
         boutonBurger.setOnClickListener{
@@ -114,12 +121,41 @@ class MainPageOffre :AppCompatActivity() {
                 else -> false
             }
         }
+
+
+
+
+        boutonDatePublication.setOnClickListener {
+            toggleFragment(FragmentDatePublication(), "DatePublicationFragment")
+        }
+
+        boutonDuree.setOnClickListener {
+            toggleFragment(FragmentDuree(), "DureeFragment")
+        }
+
+        boutonRemuneration.setOnClickListener {
+            toggleFragment(FragmentRemuneration(), "RemunerationFragment")
+        }
     }
 
+    private fun toggleFragment(fragment: Fragment, tag: String) {
+        val fragmentManager = supportFragmentManager
+        val currentFragment = fragmentManager.findFragmentById(R.id.fragment_container_filtre_date_publication)
+        val fragmentContainer = findViewById<FrameLayout>(R.id.fragment_container_filtre_date_publication)
 
-
-
-
-
+        fragmentManager.beginTransaction().apply {
+            // Si le fragment est déjà affiché et est du même type, le retirer
+            if (currentFragment != null && currentFragment.tag == tag) {
+                remove(currentFragment)
+                fragmentContainer.layoutParams.height = 0
+            } else {
+                // Remplacer tout fragment existant par le nouveau
+                replace(R.id.fragment_container_filtre_date_publication, fragment, tag)
+                fragmentContainer.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+            }
+            commit()
+        }
+        fragmentContainer.requestLayout()
+    }
 
 }

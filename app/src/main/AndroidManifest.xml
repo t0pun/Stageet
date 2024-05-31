@@ -88,7 +88,15 @@
         <activity
             android:name=".CandidatEntreprise">
         </activity>
-
+        <activity
+            android:name=".FragmentDatePublication">
+        </activity>
+        <activity
+            android:name=".FragmentDuree">
+        </activity>
+        <activity
+            android:name=".FragmentRemuneration">
+        </activity>
 
 
     </application>

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -286,6 +291,9 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewRecherche"
         android:layout_width="match_parent"
@@ -433,7 +441,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
                         android:fontFamily="@font/comfortaa_bold"
                         android:text="Date de publication"
                         android:textAllCaps="false"
@@ -445,7 +452,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
                         android:fontFamily="@font/comfortaa_bold"
                         android:text="Durée"
                         android:textAllCaps="false"
@@ -457,36 +463,51 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
                         android:fontFamily="@font/comfortaa_bold"
                         android:text="Rémunération"
                         android:textAllCaps="false"
                         android:textSize="10sp"
                         android:layout_margin="8dp" />
 
+
+
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/boutonPeriode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bouton_filtre"
-                        android:backgroundTint="@color/gris"
                         android:fontFamily="@font/comfortaa_bold"
                         android:text="Période"
                         android:textAllCaps="false"
                         android:textSize="10sp"
                         android:layout_margin="8dp" />
-                    <!-- Boutons dynamiques pour les filtres -->
-                    <!-- Définissez vos boutons ici comme illustré précédemment -->
+
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 
+
+    <FrameLayout
+        android:id="@+id/fragment_container_filtre_date_publication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/bodyApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/missionCard"
+        app:layout_constraintVertical_bias="0.728"
+        />
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bodyApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -510,3 +531,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
