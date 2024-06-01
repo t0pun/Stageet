@@ -1,108 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        tools:ignore="MissingConstraints">
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imageViewLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="151dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="150dp"
-                app:srcCompat="@mipmap/logo_foreground"
-                tools:layout_editor_absoluteX="126dp" />
-
-            <ImageView
-                android:id="@+id/imageViewBoutonBurger"
-                android:layout_width="58dp"
-                android:layout_height="52dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="45dp"
-                app:srcCompat="@mipmap/bouton_burger_foreground" />
-
-        </RelativeLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewEntreprise"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_marginTop="10dp"
-        android:visibility="visible"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-7dp">
-
-
-        <TextView
-            android:id="@+id/nomEntreprise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="nom entreprise"
-            android:textSize="30dp" />
-
-
-    </androidx.cardview.widget.CardView>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Candidats"
-        android:textSize="30dp"
-        android:fontFamily="@font/comfortaa_bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299"
-        android:layout_marginBottom="20dp"
-        tools:ignore="MissingConstraints">
-    </TextView>
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/missionCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="250dp"
         app:cardCornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -119,7 +27,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/gris"
+                    android:background="@color/red"
                     android:gravity="left"
                     android:orientation="vertical"
                     android:padding="17dp">
@@ -161,7 +69,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/comfortaa_bold"
                                 android:maxLength="35"
-                                android:text="En cours"
+                                android:text="Mai - juin"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/white"
                                 android:textSize="15dp" />
@@ -189,7 +97,7 @@
                     android:layout_marginRight="30dp"
                     android:drawablePadding="10dp"
                     android:fontFamily="@font/comfortaa_bold"
-                    android:text="Nom : "
+                    android:text="Durée : "
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
@@ -209,7 +117,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="30dp"
                     android:drawablePadding="10dp"
-                    android:text="Prenom : "
+                    android:text="Rémunération : "
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
@@ -229,7 +137,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="30dp"
                     android:drawablePadding="10dp"
-                    android:text="Numéro : "
+                    android:text="Entreprise : "
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
@@ -256,34 +164,20 @@
 
             </LinearLayout>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnApply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Candidater"
+                android:background="@drawable/button_border"
+                android:textColor="@color/black"
+                android:fontFamily="@font/comfortaa_bold"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="30dp"
+                android:textSize="18sp"
+                android:textAllCaps="false"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bodyApp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@drawable/rounded_bottom_navbar"
-            app:itemIconTint="@color/colorWhite"
-            app:itemTextColor="@color/colorWhite"
-            app:menu="@menu/bottom_nav_menu"
-            app:labelVisibilityMode="unlabeled"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

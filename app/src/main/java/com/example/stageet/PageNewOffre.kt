@@ -16,21 +16,30 @@ class PageNewOffre : AppCompatActivity() {
         setContentView(R.layout.activity_page_newoffre)
 
 
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.navVieuw)
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-
-                R.id.navHome -> {
+                R.id.navigation_home -> {
+                    startActivity(Intent(this, PageNewOffre::class.java))
+                    true
+                }
+                R.id.navigation_dashboard -> {
                     startActivity(Intent(this, MainPageOffre::class.java))
                     true
                 }
-
-                R.id.navProfile -> {
+                /*
+                R.id.navigation_notifications -> {
+                    startActivity(Intent(this, MainPageOffre::class.java))
+                    true
+                }
+                 */
+                R.id.navigation_profile -> {
                     startActivity(Intent(this, Profil_user::class.java))
                     true
                 }
                 else -> false
             }
         }
+
     }
 }

@@ -3,18 +3,19 @@ package com.example.stageet
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class Profil_user : AppCompatActivity() {
+class ProfilInfoPerso : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId", "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_profil)
+        setContentView(R.layout.activity_info_perso)
 
 
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
@@ -44,16 +45,11 @@ class Profil_user : AppCompatActivity() {
             }
         }
 
-        val infoPerso : CardView = findViewById(R.id.infoPerso)
-        infoPerso.setOnClickListener{
-            startActivity(Intent(this, ProfilInfoPerso::class.java))
-        }
 
-        val expPro : CardView = findViewById(R.id.exp_pro)
-        expPro.setOnClickListener{
-            startActivity(Intent(this, ProfilExpPro::class.java))
-        }
-
+        val retourArriere : TextView = findViewById(R.id.retour)
+        retourArriere.setOnClickListener{
+            startActivity(Intent(this, Profil_user::class.java))
         }
 
     }
+}

@@ -18,12 +18,13 @@
         app:title=""
         app:popupTheme="@style/AppTheme.PopupOverlay">
 
-        <ImageView
-            android:id="@+id/menuIcon"
+        <TextView
+            android:id="@+id/retour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:src="@drawable/ic_menu" />
+            android:drawableStart="@drawable/baseline_arrow_back_24" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <!-- Profile card -->
@@ -43,15 +44,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
-            <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/profile_picture"
-                android:scaleType="centerCrop"
-                android:background="@drawable/circle" />
 
             <TextView
                 android:id="@+id/profileName"
@@ -75,12 +67,12 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Section with icons and labels -->
-    <GridLayout
+    <LinearLayout
         android:id="@+id/iconSection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:columnCount="2"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/profileCard"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,12 +81,9 @@
 
         <!-- Infos perso -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/infoPerso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:elevation="4dp"
             app:cardCornerRadius="8dp">
 
@@ -105,59 +94,31 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_infos_perso" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="infos. perso."
-                    android:textSize="14sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_school_24"
+                    android:drawablePadding="10dp"
+                    android:text="Diplôme : "
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="15sp" />
 
-        <!-- Diplômes -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/exp_pro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:elevation="4dp"
-            app:cardCornerRadius="8dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </EditText>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_diplomes" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="diplômes"
-                    android:textSize="14sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Expériences pro -->
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:elevation="4dp"
             app:cardCornerRadius="8dp">
 
@@ -168,27 +129,30 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_experiences_pro" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="expériences pro."
-                    android:textSize="14sp" />
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_calendar_month_24"
+                    android:drawablePadding="10dp"
+                    android:text="Année : "
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </EditText>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Mes candidatures -->
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:elevation="4dp"
             app:cardCornerRadius="8dp">
 
@@ -199,21 +163,40 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_mes_candidatures" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Mes candidatures"
-                    android:textSize="14sp" />
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_business_24"
+                    android:drawablePadding="10dp"
+                    android:text="Université : "
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </EditText>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-    </GridLayout>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/red"
+            android:text="Enregistrer"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="15dp"/>
+
+
+    </LinearLayout>
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

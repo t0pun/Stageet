@@ -115,15 +115,15 @@ class MainPageOffre :AppCompatActivity() {
                 }
                 /*
                 R.id.navigation_dashboard -> {
-                    startActivity(Intent(this, DashboardActivity::class.java))
+                    startActivity(Intent(this, MainPageOffre::class.java))
                     true
                 }
-
-                 */
                 R.id.navigation_notifications -> {
                     startActivity(Intent(this, MainPageOffre::class.java))
                     true
                 }
+
+                 */
                 R.id.navigation_profile -> {
                     startActivity(Intent(this, Profil_user::class.java))
                     true
@@ -133,6 +133,11 @@ class MainPageOffre :AppCompatActivity() {
         }
 
 
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_offre, FragmentOffre())
+                .commit()
+        }
 
 
         boutonDatePublication.setOnClickListener {
@@ -167,5 +172,8 @@ class MainPageOffre :AppCompatActivity() {
         }
         fragmentContainer.requestLayout()
     }
+
+
+
 
 }

@@ -64,12 +64,19 @@ class MainActivity : AppCompatActivity() {
             textRefuser.setOnClickListener {
                 dialog.dismiss()
 
-                startActivity(Intent(this, MainPageOffre::class.java))
+                startActivity(Intent(this, PageNewOffre::class.java))
             }
 
             dialog.show()
         }
 
+        login.setOnClickListener{
+            startActivity(Intent(this, ProfilEntreprise::class.java))
+        }
+
+        changePassword.setOnClickListener {
+            startActivity(Intent(this, MainPageEntreprise::class.java))
+        }
     }
 
     private fun signInUser(email: String, password: String) {

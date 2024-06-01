@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -85,6 +87,38 @@ class MainPageEntreprise : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    startActivity(Intent(this, MainPageEntreprise::class.java))
+                    true
+                }
+                /*
+                R.id.navigation_dashboard -> {
+                    startActivity(Intent(this, MainPageOffre::class.java))
+                    true
+                }
+                 */
+                R.id.navigation_notifications -> {
+                    startActivity(Intent(this, CandidatEntreprise::class.java))
+                    true
+                }
+                R.id.navigation_profile -> {
+                    startActivity(Intent(this, ProfilEntreprise::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
+        val buttonAjoutOffre : AppCompatButton = findViewById(R.id.buttonAjoutOffre)
+
+        buttonAjoutOffre.setOnClickListener{
+            startActivity(Intent(this, CreationOffre::class.java))
         }
     }
 }

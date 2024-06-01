@@ -97,6 +97,15 @@
         <activity
             android:name=".FragmentRemuneration">
         </activity>
+        <activity
+            android:name=".ProfilInfoPerso">
+        </activity>
+        <activity
+            android:name=".ProfilExpPro">
+        </activity>
+        <activity
+            android:name=".CreationDiplome">
+        </activity>
 
 
     </application>
