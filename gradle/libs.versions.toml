@@ -14,7 +14,11 @@ googleServices = "4.4.1"
 firebaseAuth = "23.0.0"
 firebaseDatabase = "21.0.0"
 playServicesLocation = "21.3.0"
+<<<<<<< HEAD
 firebaseFirestoreKtx = "25.0.0"
+=======
+firebaseAuthKtx = "23.0.0"
+>>>>>>> e923ba7496b263ce2687020107326c1b1c8b452f
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,7 +34,11 @@ google-services = { group = "com.google.gms", name = "google-services", version.
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+<<<<<<< HEAD
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+=======
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+>>>>>>> e923ba7496b263ce2687020107326c1b1c8b452f
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

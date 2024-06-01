@@ -63,10 +63,13 @@ class MainActivity : AppCompatActivity() {
 
             textRefuser.setOnClickListener {
                 dialog.dismiss()
+
+                startActivity(Intent(this, MainPageOffre::class.java))
             }
 
             dialog.show()
         }
+
     }
 
     private fun signInUser(email: String, password: String) {

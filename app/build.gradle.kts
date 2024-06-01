@@ -46,7 +46,11 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     implementation(libs.play.services.location)
+<<<<<<< HEAD
     implementation(libs.firebase.firestore.ktx)
+=======
+    implementation(libs.firebase.auth.ktx)
+>>>>>>> e923ba7496b263ce2687020107326c1b1c8b452f
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -57,7 +57,7 @@ class MainEmployeurAjoutLien : AppCompatActivity() {
         }
 
         boutonPasserAjoutLien.setOnClickListener{
-            //val intent = Intent(this, ::class.java)
+            val intent = Intent(this, MainPageEntreprise::class.java)
             startActivity(intent)
 
         }

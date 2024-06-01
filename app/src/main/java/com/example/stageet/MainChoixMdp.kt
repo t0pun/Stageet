@@ -69,7 +69,7 @@ class MainChoixMdp : AppCompatActivity() {
                                             Toast.LENGTH_SHORT
                                         ).show()
                                         // Navigate to the next activity
-                                        val intent = Intent(this, MainChoixNaissance::class.java)
+                                        val intent = Intent(this, PageNewOffre::class.java)
                                         startActivity(intent)
                                     }
                                     .addOnFailureListener { e ->
