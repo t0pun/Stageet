@@ -35,8 +35,10 @@ class MainEmployeurNumeroTel : AppCompatActivity() {
         numeroTel.setOnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 val mdpText = numeroTel.text.toString().trim()
-                if (email != null && isValidEmail(email)) {
-                    auth.createUserWithEmailAndPassword(email, mdpText)
+                val trimmedEmail = email?.trim()
+
+                if (trimmedEmail != null && isValidEmail(trimmedEmail)) {
+                    auth.createUserWithEmailAndPassword(trimmedEmail, mdpText)
                         .addOnCompleteListener(this@MainEmployeurNumeroTel) { task ->
                             if (task.isSuccessful) {
                                 // Sign in success
@@ -46,7 +48,7 @@ class MainEmployeurNumeroTel : AppCompatActivity() {
                                 // Enregistrer les données supplémentaires dans Realtime Database
                                 val userData = mapOf(
                                     "entreprise" to nom,
-                                    "email" to email,
+                                    "email" to trimmedEmail,
                                     "localisation" to localisation,
                                 )
 
@@ -61,8 +63,10 @@ class MainEmployeurNumeroTel : AppCompatActivity() {
                                             "User registered successfully.",
                                             Toast.LENGTH_SHORT
                                         ).show()
-                                        // Navigate to the next activity
-                                        val intent = Intent(this, MainChoixNaissance::class.java)
+                                        // Navigate to the profile activity
+                                        val intent = Intent(this, MainPageEntreprise::class.java).apply {
+                                            putExtra("USER_ID", user.uid)
+                                        }
                                         startActivity(intent)
                                     }
                                     .addOnFailureListener { e ->
@@ -88,7 +92,7 @@ class MainEmployeurNumeroTel : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@MainEmployeurNumeroTel,
-                        "Invalid email format.",
+                        "Invalid email format: $trimmedEmail",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -97,13 +101,10 @@ class MainEmployeurNumeroTel : AppCompatActivity() {
                 false
             }
         }
-
-
     }
 
     private fun isValidEmail(email: String): Boolean {
-        return false
+        val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$".toRegex()
+        return emailRegex.matches(email)
     }
-
-
 }

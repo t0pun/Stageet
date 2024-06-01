@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         changePassword.setOnClickListener {
-            startActivity(Intent(this, Profil_user::class.java))
+            startActivity(Intent(this, MainPageEntreprise::class.java))
         }
     }
 

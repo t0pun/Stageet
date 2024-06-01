@@ -23,7 +23,7 @@ class MainEmployeurEmail : AppCompatActivity() {
         email.setOnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 val emailEntrepriseText = email.text.toString()
-                val intent = Intent(this, MainEmployeurLocalisation::class.java).apply {
+                val intent = Intent(this, MainEmployeurMdp::class.java).apply {
                     putExtra("EXTRA_NOM",nom)
                     putExtra("EXTRA_LOCALISATION",localisation)
                     putExtra("EXTRA_EMAIL",emailEntrepriseText)

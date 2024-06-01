@@ -23,7 +23,7 @@ class MainEmployeurLocalisation : AppCompatActivity() {
         localisationEntreprise.setOnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 val localisationEntrepriseText = localisationEntreprise.text.toString()
-                val intent = Intent(this, MainEmployeurLocalisation::class.java).apply {
+                val intent = Intent(this, MainEmployeurEmail::class.java).apply {
                     putExtra("EXTRA_NOM",nom)
                     putExtra("EXTRA_LOCALISATION",localisationEntrepriseText)
                 }
