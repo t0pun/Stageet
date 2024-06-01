@@ -44,6 +44,15 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/profile_picture"
+                android:scaleType="centerCrop"
+                android:background="@drawable/circle" />
+
             <TextView
                 android:id="@+id/profileName"
                 android:layout_width="wrap_content"
@@ -66,12 +75,12 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Section with icons and labels -->
-    <LinearLayout
+    <GridLayout
         android:id="@+id/iconSection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:orientation="vertical"
+        android:columnCount="2"
         app:layout_constraintTop_toBottomOf="@+id/profileCard"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,9 +89,11 @@
 
         <!-- Infos perso -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:elevation="4dp"
             app:cardCornerRadius="8dp">
 
@@ -107,11 +118,44 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Expériences pro -->
+        <!-- Diplômes -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:elevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_diplomes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="diplômes"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Expériences pro -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:elevation="4dp"
             app:cardCornerRadius="8dp">
 
@@ -138,9 +182,11 @@
 
         <!-- Mes candidatures -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
             android:elevation="4dp"
             app:cardCornerRadius="8dp">
 
@@ -165,7 +211,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+    </GridLayout>
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
