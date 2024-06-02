@@ -31,9 +31,13 @@ class MainPageOffre :AppCompatActivity() {
 
 
     private lateinit var constraintLayout: ConstraintLayout
-    private val constraintSetInitial = ConstraintSet()
+    private var constraintSetInitial = ConstraintSet()
     private val constraintSetFinal = ConstraintSet()
     private var cardVisibleRecherche = false
+    private var isFrameVisible = false
+    private var constraintSetSearchBarVisible = ConstraintSet()
+    private var constraintSetFiltersVisible = ConstraintSet()
+
 
     @SuppressLint("MissingInflatedId", "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,23 +82,34 @@ class MainPageOffre :AppCompatActivity() {
             }
         }
 
-        constraintSetInitial.clone(constraintLayout)
-        // Load the final state of the layout from the XML
-        constraintSetFinal.clone(this, R.layout.activity_page_offre_final)
 
-        boutonRecherche.setOnClickListener {
-            TransitionManager.beginDelayedTransition(constraintLayout)
-            if (cardVisibleRecherche) {
-                // Apply the initial constraints to return to the original state
-                constraintSetInitial.applyTo(constraintLayout)
-                cardViewRecherche.visibility = View.GONE
-            } else {
-                // Apply the final constraints to show cardViewRecherche in its new position
-                constraintSetFinal.applyTo(constraintLayout)
-                cardViewRecherche.visibility = View.VISIBLE
-            }
-            cardVisibleRecherche = !cardVisibleRecherche
+            val constraintLayout: ConstraintLayout = findViewById(R.id.constraintLayout)
+
+            constraintSetInitial.clone(constraintLayout)
+            constraintSetSearchBarVisible.clone(this, R.layout.activity_page_offre_final)
+
+            boutonRecherche.setOnClickListener {
+                TransitionManager.beginDelayedTransition(constraintLayout)
+                when {
+                    cardViewRecherche.visibility == View.VISIBLE -> {
+                        constraintSetInitial.applyTo(constraintLayout)
+                        cardViewRecherche.visibility = View.GONE
+                    }
+                    cardViewRecherche.visibility == View.VISIBLE -> {
+                        constraintSetFiltersVisible.applyTo(constraintLayout)
+                    }
+                    else -> {
+                        constraintSetSearchBarVisible.applyTo(constraintLayout)
+                        cardViewRecherche.visibility = View.VISIBLE
+                    }
+                }
         }
+
+
+
+
+
+
 
 
         boutonAnnuler.setOnClickListener{
@@ -118,12 +133,14 @@ class MainPageOffre :AppCompatActivity() {
                     startActivity(Intent(this, MainPageOffre::class.java))
                     true
                 }
+
+                 */
                 R.id.navigation_notifications -> {
-                    startActivity(Intent(this, MainPageOffre::class.java))
+                    startActivity(Intent(this, UserNotif::class.java))
                     true
                 }
 
-                 */
+
                 R.id.navigation_profile -> {
                     startActivity(Intent(this, Profil_user::class.java))
                     true
@@ -155,23 +172,42 @@ class MainPageOffre :AppCompatActivity() {
 
     private fun toggleFragment(fragment: Fragment, tag: String) {
         val fragmentManager = supportFragmentManager
-        val currentFragment = fragmentManager.findFragmentById(R.id.fragment_container_filtre_date_publication)
+        val currentFragment = fragmentManager.findFragmentByTag(tag)
         val fragmentContainer = findViewById<FrameLayout>(R.id.fragment_container_filtre_date_publication)
+        val constraintLayout = findViewById<ConstraintLayout>(R.id.constraintLayout)
+
+        // Préparez les ConstraintSets pour les trois états possibles
+        val constraintSetInitial = ConstraintSet()
+        val constraintSetSearch = ConstraintSet()  // Cet état correspond au XML activity_page_offre_final
+        val constraintSetWithFragment = ConstraintSet()
+        constraintSetInitial.clone(constraintLayout) // Cloner l'état initial
+        constraintSetSearch.clone(this, R.layout.activity_page_offre_final) // XML intermédiaire sans le fragment
+        constraintSetWithFragment.clone(this, R.layout.activity_page_offre_with_filters) // XML final avec le fragment
+
+        // Transition avec animation
+        TransitionManager.beginDelayedTransition(constraintLayout)
 
         fragmentManager.beginTransaction().apply {
-            // Si le fragment est déjà affiché et est du même type, le retirer
-            if (currentFragment != null && currentFragment.tag == tag) {
+            if (currentFragment != null) {
+                // Si le fragment est déjà affiché, le retirer et revenir à l'état de recherche
                 remove(currentFragment)
                 fragmentContainer.layoutParams.height = 0
+                // Appliquer les contraintes de l'état de recherche (intermédiaire)
+                constraintSetSearch.applyTo(constraintLayout)
             } else {
-                // Remplacer tout fragment existant par le nouveau
+                // Ajouter ou remplacer le fragment s'il n'est pas déjà affiché
                 replace(R.id.fragment_container_filtre_date_publication, fragment, tag)
                 fragmentContainer.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                // Appliquer les contraintes pour l'état avec le fragment visible
+                constraintSetWithFragment.applyTo(constraintLayout)
             }
             commit()
         }
-        fragmentContainer.requestLayout()
+        // Inverse l'état de visibilité après la manipulation
+        fragmentContainer.requestLayout() // Mise à jour du layout après la transaction
     }
+
+
 
 
 

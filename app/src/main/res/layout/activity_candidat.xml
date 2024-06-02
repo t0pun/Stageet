@@ -81,184 +81,33 @@
 
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/comfortaa_bold"
         android:text="Candidats"
         android:textSize="30dp"
-        android:fontFamily="@font/comfortaa_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.299"
-        android:layout_marginBottom="20dp"
         tools:ignore="MissingConstraints">
     </TextView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/missionCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/gris"
-                    android:gravity="left"
-                    android:orientation="vertical"
-                    android:padding="17dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:weightSum="6">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:gravity="left|center">
-
-                            <TextView
-                                android:id="@+id/jobTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/comfortaa_bold"
-                                android:maxLength="35"
-                                android:text="Ingénieur(e) logiciel (H/F)"
-                                android:textAlignment="textStart"
-                                android:textColor="@color/white"
-                                android:textSize="15dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right|center">
-
-                            <TextView
-                                android:id="@+id/date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/comfortaa_bold"
-                                android:maxLength="35"
-                                android:text="En cours"
-                                android:textAlignment="textStart"
-                                android:textColor="@color/white"
-                                android:textSize="15dp" />
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/jobCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="@font/comfortaa_bold"
-                    android:text="Nom : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/jobLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:text="Prenom : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/jobSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:text="Numéro : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/lieu2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginBottom="20dp"
-                    android:drawablePadding="10dp"
-                    android:text="Lieu : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+    <FrameLayout
+        android:id="@+id/fragment_candidat_encours"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/bodyApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.158" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bodyApp"

@@ -104,7 +104,16 @@
             android:name=".ProfilExpPro">
         </activity>
         <activity
+            android:name=".ProfilCandidature">
+        </activity>
+        <activity
             android:name=".CreationDiplome">
+        </activity>
+        <activity
+            android:name=".ProfilEntrepriseInfo">
+        </activity>
+        <activity
+            android:name=".UserNotif">
         </activity>
 
 

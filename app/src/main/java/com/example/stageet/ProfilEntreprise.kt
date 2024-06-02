@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -112,6 +113,16 @@ class ProfilEntreprise : AppCompatActivity() {
 
                     else -> false
                 }
+            }
+
+            val mesoffres : CardView = findViewById(R.id.mesoffres)
+            mesoffres.setOnClickListener{
+                startActivity(Intent(this, MainPageEntreprise::class.java))
+            }
+
+            val infoEntreprise : CardView = findViewById(R.id.infoEntreprise)
+            infoEntreprise.setOnClickListener{
+                startActivity(Intent(this, ProfilEntrepriseInfo::class.java))
             }
         }
     }

@@ -120,5 +120,11 @@ class MainPageEntreprise : AppCompatActivity() {
         buttonAjoutOffre.setOnClickListener{
             startActivity(Intent(this, CreationOffre::class.java))
         }
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_offre_entreprise, FragmentOffreEntreprise())
+                .commit()
+        }
     }
 }

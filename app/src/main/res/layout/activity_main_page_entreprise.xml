@@ -57,9 +57,9 @@
         android:text="Nos offres :"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.194"
+        app:layout_constraintVertical_bias="0.301"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -67,6 +67,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -101,6 +103,18 @@
 
     </androidx.cardview.widget.CardView>
 
+
+    <FrameLayout
+        android:id="@+id/fragment_offre_entreprise"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bodyApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.158" />
 
 
 
@@ -153,169 +167,7 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/missionCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/red"
-                    android:gravity="left"
-                    android:orientation="vertical"
-                    android:padding="17dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:weightSum="6">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:gravity="left|center">
-
-                            <TextView
-                                android:id="@+id/jobTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/comfortaa_bold"
-                                android:maxLength="35"
-                                android:text="Ingénieur(e) logiciel (H/F)"
-                                android:textAlignment="textStart"
-                                android:textColor="@color/white"
-                                android:textSize="15dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="right|center">
-
-                            <TextView
-                                android:id="@+id/date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/comfortaa_bold"
-                                android:maxLength="35"
-                                android:text="Mai - juin"
-                                android:textAlignment="textStart"
-                                android:textColor="@color/white"
-                                android:textSize="15dp" />
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/jobCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="@font/comfortaa_bold"
-                    android:text="Durée : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/jobLocation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:text="Rémunération : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/jobSalary"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:drawablePadding="10dp"
-                    android:text="Entreprise : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/lieu2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginBottom="20dp"
-                    android:drawablePadding="10dp"
-                    android:text="Lieu : "
-                    android:textColor="@color/black"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
 
 
@@ -345,17 +197,17 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAjoutOffre"
-        android:layout_width="129dp"
-        android:layout_height="43dp"
+        android:layout_width="178dp"
+        android:layout_height="54dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="116dp"
         android:background="@drawable/bouton_plus"
         android:text="+"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307"
+        app:layout_constraintVertical_bias="0.308"
         tools:ignore="MissingConstraints" />
 
 

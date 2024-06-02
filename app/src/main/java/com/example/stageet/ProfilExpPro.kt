@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import org.w3c.dom.Text
 
 class ProfilExpPro : AppCompatActivity() {
 
@@ -20,5 +21,11 @@ class ProfilExpPro : AppCompatActivity() {
         bouttonAjoutDiplome.setOnClickListener{
             startActivity(Intent(this, CreationDiplome::class.java))
         }
+
+        val retourArriere : TextView = findViewById(R.id.retour)
+        retourArriere.setOnClickListener{
+            startActivity(Intent(this, Profil_user::class.java))
+        }
+
     }
 }

@@ -28,12 +28,12 @@ class Profil_user : AppCompatActivity() {
                     startActivity(Intent(this, MainPageOffre::class.java))
                     true
                 }
-                /*
+
                 R.id.navigation_notifications -> {
-                    startActivity(Intent(this, MainPageOffre::class.java))
+                    startActivity(Intent(this, UserNotif::class.java))
                     true
                 }
-
+                /*
                 R.id.navigation_profile -> {
                     startActivity(Intent(this, Profil_user::class.java))
                     true
@@ -52,6 +52,12 @@ class Profil_user : AppCompatActivity() {
         val expPro : CardView = findViewById(R.id.exp_pro)
         expPro.setOnClickListener{
             startActivity(Intent(this, ProfilExpPro::class.java))
+        }
+
+        val candidature : CardView = findViewById(R.id.candidature)
+        candidature.setOnClickListener{
+            startActivity(Intent(this, ProfilCandidature::class.java))
+
         }
 
         }

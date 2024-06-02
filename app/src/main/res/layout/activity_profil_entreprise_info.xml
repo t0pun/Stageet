@@ -18,12 +18,13 @@
         app:title=""
         app:popupTheme="@style/AppTheme.PopupOverlay">
 
-        <ImageView
-            android:id="@+id/menuIcon"
+        <TextView
+            android:id="@+id/retour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:src="@drawable/ic_menu" />
+            android:drawableStart="@drawable/baseline_arrow_back_24" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <!-- Profile card -->
@@ -80,7 +81,6 @@
 
         <!-- Infos perso -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/infoEntreprise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -94,24 +94,22 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_infos_perso" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="infos. entreprises."
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_business_24"
+                    android:drawablePadding="10dp"
+                    android:text="nom de l'entreprise"
                     android:fontFamily="@font/comfortaa_bold"
-                    android:textSize="14sp" />
+                    android:textSize="15sp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- Expériences pro -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/mesoffres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -125,18 +123,17 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/baseline_description_24" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Mes offres"
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_location_on_24"
+                    android:drawablePadding="10dp"
+                    android:text="ville"
                     android:fontFamily="@font/comfortaa_bold"
-                    android:textSize="14sp" />
+                    android:textSize="15sp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -155,18 +152,73 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/baseline_add_link_24" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_home_24"
+                    android:drawablePadding="10dp"
+                    android:text="adresse"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Liens"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/comfortaa_bold"/>
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_alternate_email_24"
+                    android:drawablePadding="10dp"
+                    android:text="email"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="left"
+                    android:drawableStart="@drawable/baseline_phone_android_24"
+                    android:drawablePadding="10dp"
+                    android:text="numéro de téléphone"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="15sp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -187,6 +239,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

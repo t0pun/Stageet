@@ -42,6 +42,12 @@ class CandidatEntreprise : AppCompatActivity() {
             }
         }
 
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_candidat_encours, FragmentCandidatEnCours())
+                .commit()
+        }
+
 
     }
 
