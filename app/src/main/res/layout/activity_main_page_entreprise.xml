@@ -6,209 +6,118 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        tools:ignore="MissingConstraints">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <ImageView
-                android:id="@+id/imageViewLogo"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageViewLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="151dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="150dp"
+                        app:srcCompat="@mipmap/logo_foreground" />
+
+                    <ImageView
+                        android:id="@+id/imageViewBoutonBurger"
+                        android:layout_width="58dp"
+                        android:layout_height="52dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="45dp"
+                        app:srcCompat="@mipmap/bouton_burger_foreground" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="151dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Nos offres :"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewEntreprise"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    android:id="@+id/nomEntreprise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:text="nom entreprise"
+                    android:textSize="30dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAjoutOffre"
+                android:layout_width="178dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bouton_plus"
+                android:text="+"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:id="@+id/fragment_offre_entreprise"
+                android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="150dp"
-                app:srcCompat="@mipmap/logo_foreground"
-                tools:layout_editor_absoluteX="126dp" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageViewBoutonBurger"
-                android:layout_width="58dp"
-                android:layout_height="52dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="45dp"
-                app:srcCompat="@mipmap/bouton_burger_foreground" />
+        </LinearLayout>
+    </ScrollView>
 
-        </RelativeLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/comfortaa_bold"
-        android:text="Nos offres :"
+        android:layout_gravity="bottom"
+        android:background="@drawable/rounded_bottom_navbar"
+        app:itemIconTint="@color/colorWhite"
+        app:itemTextColor="@color/colorWhite"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.301"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewEntreprise"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:layout_marginTop="10dp"
-        android:visibility="visible"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-7dp">
-
-
-        <TextView
-            android:id="@+id/nomEntreprise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="nom entreprise"
-            android:textSize="30dp" />
-
-
-    </androidx.cardview.widget.CardView>
-
-
-    <FrameLayout
-        android:id="@+id/fragment_offre_entreprise"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bodyApp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.158" />
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewBurger"
-        android:layout_width="424dp"
-        android:layout_height="116dp"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill"
-        android:visibility="gone"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-5dp">
-
-
-        <TextView
-            android:id="@+id/textViewSeConnecter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Se connecter" />
-
-        <TextView
-            android:id="@+id/textViewSincrire"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="45dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="S'incrire" />
-
-
-        <TextView
-            android:id="@+id/textViewParametres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="15dp"
-            android:fontFamily="@font/comfortaa_bold"
-            android:text="Paramètres" />
-
-
-    </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bodyApp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@drawable/rounded_bottom_navbar"
-            app:itemIconTint="@color/colorWhite"
-            app:itemTextColor="@color/colorWhite"
-            app:menu="@menu/bottom_nav_menu"
-            app:labelVisibilityMode="unlabeled"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonAjoutOffre"
-        android:layout_width="178dp"
-        android:layout_height="54dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="116dp"
-        android:background="@drawable/bouton_plus"
-        android:text="+"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308"
-        tools:ignore="MissingConstraints" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

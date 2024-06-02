@@ -1,14 +1,21 @@
 package com.example.stageet
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -21,6 +28,7 @@ import com.google.firebase.ktx.Firebase
 class MainPageEntreprise : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private val REQUEST_CODE_CREATION_OFFRE = 1001
 
     @SuppressLint("MissingInflatedId", "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,7 +97,6 @@ class MainPageEntreprise : AppCompatActivity() {
             finish()
         }
 
-
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -115,16 +122,42 @@ class MainPageEntreprise : AppCompatActivity() {
             }
         }
 
-        val buttonAjoutOffre : AppCompatButton = findViewById(R.id.buttonAjoutOffre)
-
-        buttonAjoutOffre.setOnClickListener{
-            startActivity(Intent(this, CreationOffre::class.java))
+        val buttonAjoutOffre: AppCompatButton = findViewById(R.id.buttonAjoutOffre)
+        buttonAjoutOffre.setOnClickListener {
+            launchActivityCreationOffre()
         }
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_offre_entreprise, FragmentOffreEntreprise())
-                .commit()
+        if (intent.getBooleanExtra("addFragment", false)) {
+            addNewFragment()
+            Toast.makeText(this, "nouveau fragment", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun addNewFragment() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+
+        // Création d'une nouvelle instance de votre fragment
+        val newFragment = FragmentOffreEntreprise()
+
+        // Id du LinearLayout prédéfini dans le XML comme conteneur des fragments
+        val containerId = R.id.fragment_offre_entreprise
+
+        // Ajouter le fragment directement au LinearLayout prédéfini
+        fragmentTransaction.add(containerId, newFragment)
+        fragmentTransaction.commit()
+    }
+
+    private fun launchActivityCreationOffre() {
+        val intent = Intent(this, CreationOffre::class.java)
+        startActivityForResult(intent, REQUEST_CODE_CREATION_OFFRE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE_CREATION_OFFRE && resultCode == Activity.RESULT_OK && data?.getBooleanExtra("addFragment", false) == true) {
+            // Ajoutez votre logique pour ajouter un fragment ici
+            addNewFragment()
         }
     }
 }

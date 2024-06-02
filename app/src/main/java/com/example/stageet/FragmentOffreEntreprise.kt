@@ -11,4 +11,11 @@ class FragmentOffreEntreprise : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_offre_entreprise, container, false)
     }
+
+    companion object {
+        fun newInstance(): FragmentOffreEntreprise {
+            return FragmentOffreEntreprise()
+        }
+
+    }
 }
