@@ -95,6 +95,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/nom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -124,6 +125,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/prenom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -153,6 +155,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/adresse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -181,6 +184,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/ville"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"

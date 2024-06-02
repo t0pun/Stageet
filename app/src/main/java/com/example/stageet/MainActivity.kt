@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
@@ -70,10 +71,6 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        login.setOnClickListener{
-            startActivity(Intent(this, ProfilEntreprise::class.java))
-        }
-
         changePassword.setOnClickListener {
             startActivity(Intent(this, MainPageEntreprise::class.java))
         }
@@ -99,18 +96,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUserType(userId: String) {
-        val entreprisesRef = firestore.collection("entreprises").document(userId)
-        val usersRef = firestore.collection("users").document(userId)
+
+        val entreprisesRef = FirebaseDatabase.getInstance().reference.child("entreprises").child(userId)
+        val usersRef = FirebaseDatabase.getInstance().reference.child("users").child(userId)
 
         entreprisesRef.get().addOnSuccessListener { document ->
             if (document.exists()) {
                 // User is in entreprises collection
+                Toast.makeText(this, "Connected Entreprise", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, ProfilEntreprise::class.java))
+
             } else {
                 usersRef.get().addOnSuccessListener { userDocument ->
                     if (userDocument.exists()) {
-                        // User is in users collection
+                        // User iskkkk in users collection
+                        Toast.makeText(this, "Connected User", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, Profil_user::class.java))
+
                     } else {
                         Toast.makeText(this, "User not found in entreprises or users", Toast.LENGTH_SHORT).show()
                     }

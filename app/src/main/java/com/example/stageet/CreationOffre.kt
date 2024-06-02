@@ -1,7 +1,12 @@
 package com.example.stageet
 
-import android.os.Bundle
+import android.widget.TextView
+
 import android.util.Log
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -21,15 +26,26 @@ class CreationOffre : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
-        setupUI()
+        // setupUI()
+        val retour : TextView = findViewById(R.id.retour)
+        retour.setOnClickListener{
+            //startActivity(Intent(this, MainPageEntreprise::class.java))
+            finish()
+        }
+
+        val enregistrer : Button = findViewById(R.id.enregistrer)
+        enregistrer.setOnClickListener {
+            saveData()
+            // Indiquer à l'activité MainPageEntreprise que vous souhaitez ajouter un fragment
+           // val intent = Intent()
+            // intent.putExtra("addFragment", true)
+             setResult(Activity.RESULT_OK, intent)
+            finish() // Ferme cette activité et retourne à MainPageEntreprise
+        }
+
     }
 
-    private fun setupUI() {
-        val btnEnregistrer = findViewById<Button>(R.id.login)
-        btnEnregistrer.setOnClickListener {
-            saveData()
-        }
-    }
+
 
     private fun saveData() {
         val user = auth.currentUser
@@ -62,18 +78,22 @@ class CreationOffre : AppCompatActivity() {
             "description" to description
         )
 
-        // Sauvegarde de l'offre sous l'UID de l'utilisateur
-        val offreId = database.reference.child("users").child(user.uid).child("offres").push().key
+        // Génération d'une clé unique pour la nouvelle offre
+        val offreId = database.reference.child("entreprises").child(user.uid).child("offres").push().key
+
         offreId?.let { id ->
-            database.reference.child("users").child(user.uid).child("offres").child(id).setValue(offreData)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Offre enregistrée avec succès!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this, "Erreur lors de l'enregistrement de l'offre", Toast.LENGTH_SHORT).show()
-                        Log.e("CreationOffre", "Failed to save offer", task.exception)
-                    }
+            // Création du chemin pour stocker l'offre sous l'UID de l'entreprise
+            val offrePath = database.reference.child("entreprises").child(user.uid).child("offres").child(id)
+
+            // Ajout des données de l'offre sans écraser les données existantes
+            offrePath.setValue(offreData).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Offre enregistrée avec succès!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Erreur lors de l'enregistrement de l'offre", Toast.LENGTH_SHORT).show()
+                    Log.e("CreationOffre", "Failed to save offer", task.exception)
                 }
+            }
         }
     }
 }
