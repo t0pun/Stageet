@@ -48,13 +48,6 @@ class MainPageEntreprise : AppCompatActivity() {
         if (currentUser != null) {
             val uid = currentUser.uid
             Log.d("MainPageEntreprise", "Current User UID: $uid")
-
-            Toast.makeText(
-                this@MainPageEntreprise,
-                "Current User UID: $uid",
-                Toast.LENGTH_SHORT
-            ).show()
-
             // Référence à la base de données Firebase
             val database = FirebaseDatabase.getInstance().reference.child("entreprises").child(uid)
 
@@ -66,12 +59,6 @@ class MainPageEntreprise : AppCompatActivity() {
 
                         // Vérifier les valeurs récupérées
                         Log.d("MainPageEntreprise", "Name: $name")
-
-                        Toast.makeText(
-                            this@MainPageEntreprise,
-                            "Name: $name",
-                            Toast.LENGTH_SHORT
-                        ).show()
 
                         // Mettre à jour l'interface utilisateur avec les données de profil
                         findViewById<TextView>(R.id.nomEntreprise).text = name ?: "N/A"

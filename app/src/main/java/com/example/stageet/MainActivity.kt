@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             textRefuser.setOnClickListener {
                 dialog.dismiss()
-
+                FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this, PageNewOffre::class.java))
             }
 
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    startActivity(Intent(this, MainChoixEmployeurRecherche::class.java))
+                    startActivity(Intent(this, PageNewOffre::class.java))
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
