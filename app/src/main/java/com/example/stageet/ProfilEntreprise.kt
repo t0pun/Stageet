@@ -50,6 +50,7 @@ class ProfilEntreprise : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     try {
                         val name = dataSnapshot.child("entreprise").getValue(String::class.java)
+                        val localisation = dataSnapshot.child("localisation").getValue(String::class.java)
 
                         // Vérifier les valeurs récupérées
                         Log.d("MainPageEntreprise", "Name: $name")
@@ -62,6 +63,8 @@ class ProfilEntreprise : AppCompatActivity() {
 
                         // Mettre à jour l'interface utilisateur avec les données de profil
                         findViewById<TextView>(R.id.profileName).text = name ?: "N/A"
+                        findViewById<TextView>(R.id.profileLocation).text = name ?: "N/A"
+
                     } catch (e: Exception) {
                         Log.e("MainPageEntreprise", "Exception in onDataChange", e)
                         Toast.makeText(

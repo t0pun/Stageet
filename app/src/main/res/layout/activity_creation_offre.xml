@@ -92,6 +92,7 @@
                 android:padding="16dp">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -103,6 +104,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/poste"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </EditText>
@@ -130,6 +132,7 @@
                 android:padding="16dp">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -141,6 +144,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/nomentreprise"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </EditText>
@@ -164,6 +168,7 @@
                 android:padding="16dp">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -175,6 +180,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/lieu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </EditText>
@@ -197,6 +203,7 @@
                 android:padding="16dp">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -208,6 +215,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/duree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </EditText>
@@ -230,6 +238,7 @@
                 android:padding="16dp">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -241,6 +250,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/mois"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </EditText>
@@ -263,6 +273,7 @@
                 android:padding="16dp">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -274,6 +285,7 @@
                     android:textSize="15sp" />
 
                 <EditText
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </EditText>

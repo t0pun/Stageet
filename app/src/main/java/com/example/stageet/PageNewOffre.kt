@@ -44,7 +44,11 @@ class PageNewOffre : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_offre, FragmentOffre())
+                .add(R.id.fragment_offre, FragmentOffre(),"F1")
+                .commit()
+
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_offre, FragmentOffre(),"F2")
                 .commit()
         }
 
